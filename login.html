@@ -1,0 +1,81 @@
+<!DOCTYPE html>   
+<html style="height: 100%;">
+	<header>
+		<meta charset="utf-8" /> 
+		<title>智能灯光管理系统 - 登陆</title>
+		<style>
+			.body{
+				margin:0px;
+				padding:0px;
+				text-align:center;
+				height:100%;
+			}
+			.loginDialog{
+				border-radius:6px;
+				width:450px;
+				height:470px;
+				left:50%;
+				top:50%;
+				background-color:white;
+				position:absolute;
+				margin-left:-225px;
+				margin-top:-250px;
+				box-shadow:0 0 38px #999;
+			}
+			.formIcon{
+				position:absolute;
+				left:0;
+				z-index:5;
+				background-repeat: no-repeat; 
+				background-position: 0px 0px; 
+				width:28px;
+				height:28px;
+			}
+			.formInput{
+				width: 100%;
+				height: 40px;
+				border-radius:5px;
+				border: 1px solid #999999;
+				box-shadow: 1px 1px 3px #cccccc;
+				padding-left: 30px;
+				margin-right: 10px;
+			}
+			.formEditText{
+				margin-top:24px;
+				margin-bottom:16px;
+				height:46px;
+			}
+			.formButton{
+				margin-top:16px;
+				width:400px;
+				height:46px;
+			}
+		</style>
+	</header>
+	
+	<body class="body">
+		<!-- 背景图片 -->
+		<div style="background:url(http://api.dujin.org/bing/1920.php) no-repeat 0 center;width:100%;height:100%;"></div>
+		<!-- 主要内容 -->
+		<div class="loginDialog">
+			<img src="res/login/card_background.png" style="width:450px;height:200px;"></i>
+			<div style="position:relative;left:-16px;">
+			
+				<form style="margin:0 auto;text-align:center;width:380px;">
+					<div class="formEditText">
+						<input class="formInput" style="background:url(res/icon/ic_account.png) no-repeat 0 center;" type="text" name="userName" placeholder="请输入用户名">
+					</div>
+					<div class="formEditText">
+						<input class="formInput" style="background:url(res/icon/ic_key.png) no-repeat 0 center;" type="text" name="userPassword" placeholder="请输入密码" maxlength="100">
+					</div>
+				</form>
+			</div>
+			<a href="https://www.baidu.com" style="float:right;margin-right:20px;"><font size="2">忘记密码?</font></a>
+			<button class="formButton">立即登陆</button>
+		</div>
+		
+	</body>
+</html>
+
+
+

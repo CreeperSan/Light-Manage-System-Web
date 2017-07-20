@@ -1,0 +1,73 @@
+.content{
+	margin:0 auto;
+	width:1200px;
+	height:100%;
+}
+
+.contentHeader{
+	background:url(../res/public/background_header.png) no-repeat 0 0;
+	background-color:#ff5722;
+	width:1200px;
+	height:150px;
+	box-shadow:0 0 38px #999;
+}
+
+.contentHeaderTab{
+	color:white;
+	padding:16px;
+	text-decoration:none;
+}
+
+.contentHeaderTab:hover{
+	color:white;
+	background-color:#bf360c;
+	padding:16px;
+}
+
+.contentBlock{
+	width:1200px;
+	margin-top:28px;
+	background-color:white;
+	box-shadow:0 0 38px #999;
+}
+
+.floatActionButton{
+	right:30px;
+	bottom:30px;
+	width:48px;
+	height:48px;
+	position:fixed;
+	background-color:#ff5722;
+	border-radius:50%;
+	box-shadow:0 0 20px #333333;
+}
+
+.floatActionButton:hover{
+	right:30px;
+	bottom:30px;
+	width:48px;
+	height:48px;
+	position:fixed;
+	background-color:#bf360c;
+	border-radius:50%;
+}
+
+.floatActionButtonImg{
+	padding:6px;
+	width:34px;
+	height:34px;
+}
+
+.floatDialog{
+	left:50%;
+	top:50%;
+	margin-left:-500px;
+	margin-top:-300px;
+	position:fixed;
+	width:1000px;
+	height:600px;
+	background-color:white;
+	box-shadow:0 0 38px #999;
+	border-radius:4px;
+}
+
