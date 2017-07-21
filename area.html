@@ -5,16 +5,46 @@
 		<link href="css/public.css"  rel="stylesheet" type="text/css" />
 		<meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"  /> 
 		<title>智能灯光管理系统 - 区域管理</title>
+		<script src="js/public.js"></script>
 		<style>
 		</style>
 	</header>
 	
 	<body class="body">
 		<!-- 背景图片 -->
-		<div style="background:url(http://api.dujin.org/bing/1920.php) no-repeat 0 center;width:100%;height:100%;position:fixed;z-index:-1;"></div>
+		<div style="background:url(res/public/background.jpg) repeat 0 center;width:100%;height:100%;position:fixed;z-index:-1;"></div>
 		<!-- 悬浮按钮 -->
-		<div class="floatActionButton">
+		<div class="floatActionButton" onclick="showDiv('addAreaDialog')">
 			<img src="res/icon/ic_add_white.png" class="floatActionButtonImg">
+		</div>
+		<!-- 添加设备弹窗 -->
+		<div id="addAreaDialog" style="width:100%;height:100%;display:none;position:fixed;background-color:rgba(0,0,0,0.5);">
+			<div class="floatDialog" style="">
+				<img src="res/area/background_dialog.jpg" style="width:1000px;height:150px;padding:0px;margin:0px;">
+				<form style="width:1000px;height:450px;padding:0px;margin-top:-10px;">
+					<!-- 表单内容 -->
+					<div style="width:1000px;height:360px;background-color:white;margin-top:16px;">
+						<input style="background:url(res/icon/ic_account.png) no-repeat 0 center;width:900px;" class="formEditText" type="text" name="areaName" placeholder="请输入区域名称">
+						<div style="width:1000px;float:left;text-align:left;margin-top:16px;margin-bottom:8px;"><a style="width:300px;margin-left:36px;"><font size="4px">设备选择</font></a></div>
+						<div style="width:900px;text-align:left;margin-left:36px">
+							<!-- 设备内容选择 -->
+							<!-- 注意，此处数据为模拟数据，具体请求服务器后添加的，还需要与服务器通信再度修改！！！ -->
+							<!-- 注意，此处数据为模拟数据，具体请求服务器后添加的，还需要与服务器通信再度修改！！！ -->
+							<!-- 注意，此处数据为模拟数据，具体请求服务器后添加的，还需要与服务器通信再度修改！！！ -->
+							<label><input name="deviceName" type="checkbox" value="">客厅大灯</label>
+							<label><input name="deviceName" type="checkbox" value="">书房大灯</label>
+							<label><input name="deviceName" type="checkbox" value="">网络大灯</label>
+							<label><input name="deviceName" type="checkbox" value="">走廊大灯</label>
+							<label><input name="deviceName" type="checkbox" value="">卫生间大灯</label>
+						</div>
+					</div>
+					<!-- 确定和取消按钮 -->
+					<div style="height:100px;float:right;margin-right:40px;">
+						<input class="floatDialogButton" type="reset" value="取消" onclick="hideDiv('addAreaDialog')">
+						<input class="floatDialogButton" type="submit" value="确定" style="color:#ff5722;">
+					</div>
+				</form>
+			</div>
 		</div>
 		<!-- 主题内容 -->
 		<div class="content">
@@ -32,14 +62,54 @@
 					<a href="info.html" class="contentHeaderTab">系统信息</a>
 				</div>
 				<!-- 内容界面 -->
-				<div class="contentBlock" style="height:1200px;">
-					区域管理
+				<div class="contentBlock" style="">
+					<div class="contentBlock" style="padding-bottom:36px;">
+						<div style="width:1200px;text-align:left;padding:32px;"><font size="5">区域管理</font></div>
+						<table style="width:1200px;" border="1">
+							<tr style="height:48px;background-color:#ddd;">
+								<td style="width:700px;">区域名称</td>
+								<td style="width:300px;">区域开关</td>
+								<td>其他操作</td>
+							</tr>
+							<!-- 区域内容展示 -->
+							<!-- 一个dr标签为一行 -->
+							<!-- 注意，此处数据为模拟数据，具体请求服务器后添加的，还需要与服务器通信再度修改！！！ -->
+							<!-- 注意，此处数据为模拟数据，具体请求服务器后添加的，还需要与服务器通信再度修改！！！ -->
+							<!-- 注意，此处数据为模拟数据，具体请求服务器后添加的，还需要与服务器通信再度修改！！！ -->
+							<tr style="height:48px;">
+								<form>
+									<td style="width:700px;">客厅</td>
+									<td style="width:300px;">
+										<label><input name="areaOn" type="checkbox" value="">开启</label>
+									</td>
+									<td><input name="areaDelete" type="button" value="删除区域"></td>
+								</form>
+							</tr>
+							<tr style="height:48px;">
+								<form>
+									<td style="width:700px;">过道</td>
+									<td style="width:300px;">
+										<label><input name="areaOn" type="checkbox" value="">开启</label>
+									</td>
+									<td><input name="areaDelete" type="button" value="删除区域"></td>
+								</form>
+							</tr>
+							<tr style="height:48px;">
+								<form>
+									<td style="width:700px;">卧室</td>
+									<td style="width:300px;">
+										<label><input name="areaOn" type="checkbox" value="">开启</label>
+									</td>
+									<td><input name="areaDelete" type="button" value="删除区域"></td>
+								</form>
+							</tr>
+						</table>
+						<!-- 底部文字 -->
+						<div style="1200px;margin-top:36px;"><font size="2">智能灯光管理系统 - 区域管理</font></div>
+					</div>
 				</div>
 			</div>
 		</div>
 		
-		<!-- 添加设备弹窗 -->
-		<div class="floatDialog">
-		</div>
 	</body>
 </html>

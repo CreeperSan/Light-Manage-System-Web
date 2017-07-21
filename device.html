@@ -3,15 +3,39 @@
 	<header>
 		<link href="css/base.css"  rel="stylesheet" type="text/css" />
 		<link href="css/public.css"  rel="stylesheet" type="text/css" />
-		<meta charset="utf-8" /> 
-		<title>智能灯光管理系统 - 设备管理</title>
+		<meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"  /> 
+		<title>智能灯光管理系统 - 区域管理</title>
+		<script src="js/public.js"></script>
 		<style>
 		</style>
 	</header>
 	
 	<body class="body">
 		<!-- 背景图片 -->
-		<div style="background:url(http://api.dujin.org/bing/1920.php) no-repeat 0 center;width:100%;height:100%;position:fixed;z-index:-1;"></div>
+		<div style="background:url(res/public/background.jpg) repeat 0 center;width:100%;height:100%;position:fixed;z-index:-1;"></div>
+		<!-- 悬浮按钮 -->
+		<div class="floatActionButton" onclick="showDiv('addAreaDialog')">
+			<img src="res/icon/ic_add_white.png" class="floatActionButtonImg">
+		</div>
+		<!-- 添加设备弹窗 -->
+		<div id="addAreaDialog" style="width:100%;height:100%;display:none;position:fixed;background-color:rgba(0,0,0,0.5);">
+			<div class="floatDialog" style="">
+				<img src="res/device/background_dialog.jpg" style="width:1000px;height:150px;padding:0px;margin:0px;">
+				<form method="get" action="/cgi-bin/dev_add_post.cgi" style="width:1000px;height:450px;padding:0px;margin-top:-10px;">
+					<!-- 表单内容 -->
+					<div style="width:1000px;height:360px;background-color:white;margin-top:16px;">
+						<input style="background:url(res/icon/ic_device.png) no-repeat 0 center;width:900px;" class="formEditText" type="text" name="deviceName" placeholder="请输入设备名称">
+						<input style="background:url(res/icon/ic_point_zigbee.png) no-repeat 0 center;width:900px;" class="formEditText" type="text" name="devicePoint" placeholder="请输入节点信息">
+						<input style="background:url(res/icon/ic_catalog.png) no-repeat 0 center;width:900px;" class="formEditText" type="text" name="deviceCatalog" placeholder="请输入设备类型">
+					</div>
+					<!-- 确定和取消按钮 -->
+					<div style="height:100px;float:right;margin-right:40px;" >
+						<input class="floatDialogButton" type="reset" value="取消" onclick="hideDiv('addAreaDialog')">
+						<input class="floatDialogButton" type="submit" value="确定" style="color:#ff5722;">
+					</div>
+				</form>
+			</div>
+		</div>
 		<!-- 主题内容 -->
 		<div class="content">
 			<div class="contentHeader" style="">
@@ -28,10 +52,121 @@
 					<a href="info.html" class="contentHeaderTab">系统信息</a>
 				</div>
 				<!-- 内容界面 -->
-				<div class="contentBlock" style="height:1280px;">
-					我是首页，我不知道要放什么东西...
+				<div class="contentBlock" style="">
+					<div style="width:1200px;text-align:left;padding:32px;"><font size="5">设备管理</font></div>
+					<!-- 设备内容展示 -->
+					<!-- 一个dr标签为一行 -->
+					<!-- 注意，此处数据为模拟数据，具体请求服务器后添加的，还需要与服务器通信再度修改！！！ -->
+					<!-- 注意，此处数据为模拟数据，具体请求服务器后添加的，还需要与服务器通信再度修改！！！ -->
+					<!-- 注意，此处数据为模拟数据，具体请求服务器后添加的，还需要与服务器通信再度修改！！！ -->
+					<table border="1" style="width:1200px;">
+						<tr style="height:48PX;background-color:#ddd;">
+							<td width="600px">设备名称</td>
+							<td>节点信息</td>
+							<td>设备类型</td>
+							<td>设备开关</td>
+							<td>删除设备</td>
+						</tr>
+						<!-- 往下为详细设备内容 -->
+						<tr style="height:48px;">
+							<form method="get" action="/cgi-bin/dev_add_post.cgi">
+								<td>客厅大灯</td>
+								<td>SL_M_1</td>
+								<td>灯光设备</td>
+								<td>
+									<label><input name="deviceOn" type="checkbox" value="">开启</label>
+								</td>
+								<td><input type="submit" value="删除设备"></td>
+							</form>
+						</tr>
+						<tr style="height:48px;">
+							<form method="get" action="/cgi-bin/dev_add_post.cgi">
+								<td>书房大灯</td>
+								<td>SL_M_2</td>
+								<td>灯光设备</td>
+								<td>
+									<label><input name="deviceOn" type="checkbox" value="">开启</label>
+								</td>
+								<td><input type="submit" value="删除设备"></td>
+							</form>
+						</tr>
+						<tr style="height:48px;">
+							<form method="get" action="/cgi-bin/dev_add_post.cgi">
+								<td>网络大灯</td>
+								<td>SL_M_5</td>
+								<td>灯光设备</td>
+								<td>
+									<label><input name="deviceOn" type="checkbox" value="">开启</label>
+								</td>
+								<td><input type="submit" value="删除设备"></td>
+							</form>
+						</tr>
+					</table>
 				</div>
+				<div class="contentBlock" style="">
+					<div style="width:1200px;text-align:left;padding:32px;"><font size="5">感应设备管理</font></div>
+					<!-- 传感器列表 -->
+					<table border="1" style="width:1200px;height:120px;">
+						<tr style="height:48PX;background-color:#ddd;">
+							<td width="600px">设备名称</td>
+							<td>节点信息</td>
+							<td>设备类型</td>
+							<td>设备开关</td>
+							<td>关联设备</td>
+							<td>删除设备</td>
+						</tr>
+						<!-- 往下为详细设备内容 -->
+						<tr style="height:48px;">
+							<form method="get" action="/cgi-bin/dev_add_post.cgi">
+								<td>光感设备</td>
+								<td>SL_M_9</td>
+								<td>光线感应</td>
+								<td>
+									<label><input name="deviceOn" type="checkbox" value="">开启</label>
+								</td>
+								<td>
+									<select name="deviceType">
+										<option value="0">不绑定</option>
+										<option value="0">客厅大灯</option>
+										<option value="0">书房大灯</option>
+										<option value="0">网络大灯</option>
+									</select>
+								</td>
+								<td><input type="submit" value="删除设备"></td>
+							</form>
+						</tr>
+					</table>
+				</div>
+				<!-- 其他设备管理 -->
+				<div class="contentBlock" style="">
+					<div style="width:1200px;text-align:left;padding:32px;"><font size="5">其他设备管理</font></div>
+					<!-- 传感器列表 -->
+					<table border="1" style="width:1200px;height:120px;">
+						<tr style="height:48PX;background-color:#ddd;">
+							<td width="600px">设备名称</td>
+							<td>节点信息</td>
+							<td>设备类型</td>
+							<td>设备开关</td>
+							<td>删除设备</td>
+						</tr>
+						<!-- 往下为详细设备内容 -->
+						<tr style="height:48px;">
+							<form method="get" action="/cgi-bin/dev_add_post.cgi">
+								<td>主控设备</td>
+								<td>SL_M_0</td>
+								<td>主控制器</td>
+								<td>
+									<label><input name="deviceOn" type="checkbox" value="">开启</label>
+								</td>
+								<td><input type="submit" value="删除设备"></td>
+							</form>
+						</tr>
+					</table>
+				</div>
+				<!-- 底部文字 -->
+				<div class="contentBlock" style="1200px;padding-top:16px;padding-bottom:16px;margin-bottom:16px;"><font size="2">智能灯光管理系统 - 设备管理</font></div>
 			</div>
 		</div>
+		
 	</body>
 </html>

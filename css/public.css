@@ -71,3 +71,38 @@
 	border-radius:4px;
 }
 
+.floatDialogButton{
+	border:none;
+	font-size:20px;
+	background:transparent;
+	text-decoration:none;
+	padding:24px;
+	margin-right:16px;
+}
+
+.floatDialogButton:hover{
+	border:none;
+	background:transparent;
+	padding:24px;
+}
+
+.formEditText{
+	margin-top:16px;
+	outline:none;
+	border:1.3px solid gray;
+	padding-left:32px;
+	height:46px;
+	border-radius:8px;
+}
+
+.formEditText:focus{
+	outline:none;
+	border:1.3px solid #ff5722;
+	padding-left:32px;
+	height:46px;
+	border-radius:8px;
+}
+
+
+
+
